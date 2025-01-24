@@ -64,12 +64,9 @@ jobs:
     - name: install stuff
       shell: bash
       run: |
-            if [ "RUNNER_OS" == "Windows" ]; then
+            if [ "$RUNNER_OS" == "Windows" ]; then
               choco install important_windows_software
-            else
-              echo "$RUNNER_OS not supported"
-              exit 1
-            fi
+            Fi
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
