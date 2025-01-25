@@ -3,6 +3,10 @@
 int count = 0;
 %}
 
+%option noyywrap
+%option nounistd
+%option never-interactive
+
 %%
 
 [A-Z]		{
@@ -19,10 +23,6 @@ int count = 0;
 		}
 
 %%
-
-int yywrap() {
-	return 0;
-}
 
 int main() {
 	yylex();

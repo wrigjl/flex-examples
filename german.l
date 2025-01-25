@@ -21,6 +21,9 @@ int otherwords = 0;
 #define	TOKEN_EOF	3
 %}
 
+%option noyywrap
+%option nounistd
+%option never-interactive
 
 %%
 
@@ -44,10 +47,6 @@ int otherwords = 0;
 			}
 %%
 
-
-int yywrap() {
-	return 1;
-}
 
 // This is a traditional approach to a lexical scanner where
 // yylex() is called repeatedly to obtain the next
